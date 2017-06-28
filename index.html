@@ -1,0 +1,113 @@
+<html>
+    <head>
+		<meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>home</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+		<link rel="stylesheet" type="text/css" href="animsition.min.css">
+		<script src="animsition.min.js"></script>
+
+    </head>
+    <body>
+        <div id="nav">
+            <ul>
+                <a href="index.html"><li>top</li></a>
+                <li>
+                    <a href="#">current works</a>
+                    <ul class="sub">
+                        <a href="summer.html"><li>summer days</li></a>
+                        <a href="oneechan.html"><li>helpless oneechan</li></a>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">misc</a>
+                    <ul class="sub">
+                        <a href="lolisona.html"><li>lolisona</li></a>
+                        <a href="tomboy.html"><li>tomboy+megane</li></a>
+                        <a href="gijinkas.html"><li>gijinkas</li></a>
+                        <a href="barista.html"><li>barista</li></a>
+                        <a href="wip.html"><li>wip</li></a>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="container">
+            <div id="intro">
+                <h1>lorem ipsum</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et nunc at lacus blandit tempor vel sed nulla. Etiam sem libero, bibendum non leo vitae, commodo interdum ligula. Suspendisse libero est, faucibus vel malesuada elementum, malesuada sed arcu. Curabitur efficitur volutpat elit, in ornare sapien lacinia quis. Duis in libero elit. Donec at magna sit amet enim sagittis consectetur. Morbi mi tortor, convallis et egestas eget, maximus quis eros. Suspendisse id eleifend neque, ac hendrerit nisi. Pellentesque porta mi eu eleifend commodo. Morbi blandit, lacus quis pulvinar congue, ante leo efficitur sem, a suscipit libero neque non massa. Maecenas augue augue, hendrerit et commodo vitae, semper interdum leo. Vivamus malesuada nibh et ligula interdum, nec venenatis ligula consequat. Vestibulum viverra cursus tellus, in scelerisque purus dictum id. Etiam nec nisi quam.</p>
+            </div>
+            <hr>
+            <div id="gallery">
+                <div class="left">
+                    <h2>works</h2>
+                    <ul>
+                        <li id="summer"><a href="summer.html">
+							<div class="bg"></div>
+							<div class="caption"><span>summer days</span></div>
+						</a></li>
+						<li id="get"><a href="https://gum.co/HnOJg">
+							<div class="bg"></div>
+							<div class="caption"><span>getaway</span></div>
+						</a></li>
+						<li id="ss"><a href="https://tapas.io/series/shining-star-">
+							<div class="bg"></div>
+							<div class="caption"><span>shining star</span></div>
+						</a></li>
+						<li id="onee"><a href="oneechan.html">
+							<div class="bg"></div>
+							<div class="caption"><span>helpless oneechan</span></div>
+						</a></li>
+						<li id="lg"><a href="https://tapas.io/series/lifeguard">
+							<div class="bg"></div>
+							<div class="caption"><span>lifeguard</span></div>
+						</a></li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <h2>misc</h2>
+                    <ul>
+                        <li id="loli"><a href="lolisona.html">
+							<div class="bg"></div>
+							<div class="caption"><span>lolisona</span></div>
+						</a></li>
+						<li id="tb"><a href="tomboy.html">
+							<div class="bg"></div>
+							<div class="caption"><span>tomboy+megane</span></div>
+						</a></li>
+						<li id="giji"><a href="gijinkas.html">
+							<div class="bg"></div>
+							<div class="caption"><span>gijinkas</span></div>
+						</a></li>
+						<li id="barista"><a href="barista.html">
+							<div class="bg"></div>
+							<div class="caption"><span>barista</span></div>
+						</a></li>
+						<li id="wip"><a href="wip.html">
+							<div class="bg"></div>
+							<div class="caption"><span>wip</span></div>
+						</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script>
+			$(document).ready(function() {
+				$('body').animsition({
+					inClass: 'fade-in-down',
+					outClass: 'fade-out-down',
+					inDuration: 1500,
+					outDuration: 800,
+					loading: false,
+					onLoadEvent: true,
+					browser: [ 'animation-duration', '-webkit-animation-duration'],
+					overlay : false,
+					overlayClass : 'animsition-overlay-slide',
+					overlayParentElement : 'body'
+				});
+			});
+            $('#nav li').hover(function() {
+				$(this).children('.sub').stop().fadeToggle(200);
+            });
+        </script>
+    </body>
+</html>
