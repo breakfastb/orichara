@@ -1,5 +1,14 @@
 * { 
+		--accent:#33a1c9;
 		    --text: #303030;
+		  }
+		  
+		  body {
+		  	font-family:'Lato', sans-serif !important;
+		  }
+		  h1, h2, h3 {
+		  	font-family: 'Raleway',sans-serif !important;
+		  	font-weight:800;
 		  }
 		  .card {
 		    padding:0;
@@ -61,7 +70,6 @@
 		  }
 		  .pillmenu li {
 		    margin:5px;
-		    text-transform:uppercase;
 		  }
 		  .pillmenu a, .nav-link {
 		    color:#606060 !important;
