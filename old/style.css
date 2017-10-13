@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Raleway');
+* {
+	--primary:#E91E63;
+	--text:#212121;
+	--subtext:#757575;
+	--darkp:#C2185B;
+	--lightp:##F8BBD0;
+	--bg:#fff;
+}
+#container {
+	padding:10px;
+}
+body {
+    text-align: center;
+    overflow-x:hidden;
+    font-family: 'Lato',sans-serif;
+	color:var(--text);
+}
+#nav {
+    margin:0 auto;
+    width:100%;
+    text-align: center;
+    position: relative;
+	z-index:15;
+}
+a {    
+    text-decoration: none;
+}
+#nav > ul > li {
+	background: #fff;
+}
+#nav * {
+    color:#8e8e8e;
+    font-family: 'Raleway',sans-serif;
+    font-size:0.95em;
+}
+#nav li {
+	background: #fff;
+}
+li {
+    list-style-type: none;
+    display:inline-block;
+    float:left;
+    padding:14px 20px;
+}
+.sub {
+    display:none;
+    position: absolute;
+    margin-left:-20px;
+    margin-top:14px;
+    background:#f0f0f0;
+    cursor: pointer;
+}
+.sub li {
+    display:block;
+    float:none;
+    width:120px;
+    text-align: left;
+	font-size:1em !important;
+}
+ul {
+    padding:0;
+    text-align: center;
+}
+#nav > ul {
+    display:inline-block;
+    cursor: pointer;
+}
+#nav::before, #nav::after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin:0 auto;
+    overflow: hidden;
+    width: 50%;
+    height: 1px;
+    content: '\a0';
+    background-color: #d0d0d0;
+    vertical-align: middle;
+	z-index: -1;
+}
+#nav::before {
+    right: 29px;
+	margin-left: -50%;
+}
+#nav::after {
+	left:29px;
+	margin-right:-50%;
+}
+#nav li:hover, #nav li:hover > a {
+    background:#f0f0f0;
+    color:var(--primary);
+	-webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+}
+#intro {
+    padding-bottom:30px;
+    padding-left:20px;
+    padding-right:20px;
+}
+hr {
+    border-color:#d0d0d0;
+    width:70%;
+	opacity:0.5;
+}
+#gallery ul li {
+    display:block;
+    float:none;
+    height:100px;
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position: center center;
+	position: relative;
+}
+#gallery {
+    padding:5px;
+}
+.left {
+    float:left;
+    width:49%;
+    text-align: left;
+}
+.left li {
+    border-left:5px solid var(--primary);
+    margin:10px 0px;
+}
+.right {
+    float:right;
+    width:49%;
+    text-align: right;
+}
+.right li {
+    border-right:5px solid var(--primary);
+    margin:10px 0px;
+}
+.caption {
+	font-family: 'Raleway',sans-serif;
+	white-space: nowrap;
+    overflow: hidden;
+	position: absolute;
+	z-index:4930;
+	width:100%;
+	line-height:128px;
+	top:0;left:0;
+	font-size:1.5em;
+	color:#fff;
+	font-weight:800;
+}
+#gallery .bg {
+	position: relative;
+	height:100px;
+	width: 100%;
+	padding:14px 20px;
+	left:-20px;
+	top:-14px;
+	background-size: cover;
+	background-position: center center;
+	-webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+	filter:brightness(95%);
+}
+#gallery ul li:hover .bg {
+    filter:brightness(60%);
+	-webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+}
+/*gallery li styling*/
+#summer .bg {
+  	background-image: url(img/banner/summer.png);
+}
+#get .bg {
+	background-image: url(img/banner/getaway.png);
+}
+#ss .bg  {
+	background-image: url(img/banner/shining.png);
+}
+#onee .bg {
+	background-image: url(img/banner/oneechan.png);
+}
+#lg .bg {
+	background-image: url(img/banner/lifeguard.png);
+}
+#loli .bg {
+	background-image: url(img/banner/loli.png);
+}
+#tb .bg {
+	background-image: url(img/banner/tomboy.png);
+}
+#giji .bg {
+	background-image: url(img/banner/gijinka.png);
+}
+#barista .bg {
+	background-image: url(img/banner/barista.png);
+}
+#wip .bg {
+	background-image: url(img/banner/wip.png);
+}
+@media (max-width: 440px) {
+	#nav li {
+		display:block;
+		float:none;
+	}
+	#nav::after, #nav::before {
+		display: none;
+	}
+	#nav, #nav li {
+		text-align: left;
+	}
+	.sub {
+		margin-left:75px;
+		margin-top:-31px;
+	}
+}
