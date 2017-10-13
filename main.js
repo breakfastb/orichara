@@ -3,7 +3,15 @@ var charas = {
         'title':'summer days',
         'blurb':"My first printed original comic. Focuses on Ayu, a mergirl, and Mia, a catgirl, who have been childhood friends.",
         'banner':'summer',
-        'link':'#',
+        'accent':'#DA6E39',
+        'link': [{
+        	'display':1,
+        	'url':'https://gum.co/ppyVX',
+        	'label':'ebook'
+        },{
+        	'url':'http://breakfastb.storenvy.com/products/21348551-summer-days',
+        	'label':'print'
+        }],
         'characters':[{
         	'profilePic':1,
         	'name':'Mia',
@@ -34,7 +42,15 @@ var charas = {
 		'title':'helpless oneechan',
 		'blurb':"Ongoing webcomic about Saki, a recent graduate student who can't do anything, and Ume, a uni freshman who can do everything.",
 		'banner':'oneechan',
-		'link':'#',
+		'accent':'#F75AA4',
+		'link': [{
+			'display':1,
+        	'url':'https://tapas.io/series/helplessoneechan',
+        	'label':'read@tapas'
+        },{
+        	'url':'http://www.webtoons.com/en/challenge/helpless-oneechan-next-door/list?title_no=111955',
+        	'label':'read@webtoon'
+        }],
 		        'characters':[{
 		        	'profilePic':1,
 		        	'name':'Saki',
@@ -66,7 +82,12 @@ var charas = {
 	  	'title':'Tomboy+megane',
 		'blurb':"L00d. Features a megane girl who's a top and a tomboy who's a bottom.",
 		'banner':'tomboy',
-		'link':'#',
+		'accent':'#33a1c9',
+		'link': [{
+			'display':1,
+        	'url':'http://breakfastbooty.tumblr.com/tagged/megane_and_tomboy',
+        	'label':'tag@tumblr'
+        }],
 		        'characters':[{
 		        	'profilePic':0,
 		        	'name':'About Them',
@@ -86,7 +107,10 @@ var charas = {
 	  	'title':'Gijinkas',
 		'blurb':"Personifications of various things!.",
 		'banner':'gijinkas',
-		'link':'#',
+		'accent':'#33a1c9',
+		'link': [{
+			'display':0
+        }],
 		        'characters':[{
 		        	'profilePic':1,
 		        	'name':'Lolisona',
@@ -140,7 +164,10 @@ var charas = {
 	  	'title':'WIP',
 		'blurb':"WIP characters, they are heavily under construction so please beware!",
 		'banner':'wip',
-		'link':'#',
+		'accent':'#33a1c9',
+		'link': [{
+			'display':0
+        }],
 		        'characters':[{
 		        	'profilePic':1,
 		        	'name':'barista+customer',
@@ -171,8 +198,20 @@ for (var i = 0, l = charas.work.length; i < l; i++) {
 	var jumbo = $('#template').clone().removeAttr('id');
 	jumbo.find('.title').text(charas.work[i].title);
 	jumbo.find('.desc').text(charas.work[i].blurb);
-	jumbo.find('.btn').attr('src','url').text('gallery');
+	//jumbo.find('.btn').attr('src','url').text(charas.work[i].linkLabel);
+	jumbo.attr('id',charas.work[i].banner);
 	jumbo.css('background-image','url(img/banner/'+charas.work[i].banner+'.png');
+	
+	$.each(charas.work[i].link, function(k,v) {
+		var btn = $('#btnTemplate').clone().removeAttr('id');
+		btn.attr('href',v.url).text(v.label);
+		if(v.display != 0) {
+			btn.appendTo(jumbo.find('.detail'));
+		}
+		else {
+			jumbo.find('.btn').remove();
+		}
+	});
 	
 	$.each(charas.work[i].characters, function(item,descriptor) {
 		var prof = $('#charaTemplate').clone().removeAttr('id');
@@ -201,15 +240,41 @@ for (var i = 0, l = charas.work.length; i < l; i++) {
 			prof.find('.profImg').remove();
 			prof.find('.profText').removeClass('col-6').addClass('col-12');
 		}
-		//prof.find('.profile').attr('src','../img/banner/'+descriptor.name+'.png');
+		
+		prof.find('.info').css('color',charas.work[i].accent);
 		prof.find('.btn').attr('href',descriptor.gallery);
 		
 		prof.appendTo(inner);
 		prof.append('<hr>');
 	});
-	jumbo.appendTo('body');
+	jumbo.appendTo('#contain');
 }
 
 $('.dropdown-toggle').click(function() {
-	$('.pillmenu').slideToggle();
+	$('.pillmenu').slideToggle(400,function() {
+		if ($('.pillmenu').is(':visible')) {
+			$('#summer').animate({ 
+				marginTop: $('.pillmenu').height()
+			},200);
+		}
+		else {
+			$('#summer').animate({ 
+				marginTop: 0
+			},200);
+		}
+	});
+});
+
+$('.pillmenu .nav-link').click(function() {
+	if (this.hash !== "") {
+      event.preventDefault();
+
+      var hash = this.hash;
+      
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top - parseFloat($('.pillmenu').height() + $('.navbar').height()) - parseFloat($('.chara').css('padding-top'))
+      }, 900, function(){
+      	//window.location.hash = hash;
+      });
+	}
 });
