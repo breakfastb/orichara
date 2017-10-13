@@ -11,6 +11,9 @@ var charas = {
         },{
         	'url':'http://breakfastb.storenvy.com/products/21348551-summer-days',
         	'label':'print'
+        },{
+        	'url':'http://breakfastbooty.tumblr.com/tagged/camp',
+        	'label':'gallery'
         }],
         'characters':[{
         	'profilePic':1,
@@ -205,12 +208,29 @@ for (var i = 0, l = charas.work.length; i < l; i++) {
 	$.each(charas.work[i].link, function(k,v) {
 		var btn = $('#btnTemplate').clone().removeAttr('id');
 		btn.attr('href',v.url).text(v.label);
+		
 		if(v.display != 0) {
 			btn.appendTo(jumbo.find('.detail'));
 		}
 		else {
 			jumbo.find('.btn').remove();
 		}
+		
+		var accent = charas.work[i].accent;
+		
+		btn.hover(
+		  function() {
+		    $(this).animate({
+		    	backgroundColor:accent,
+		    	color:'#ffffff'
+		    },100);
+		  }, function() {
+		    $(this).animate({
+		    	backgroundColor:'#c1c1c1',
+		    	color:'#303030'
+		    },100);
+		  }
+		);
 	});
 	
 	$.each(charas.work[i].characters, function(item,descriptor) {
@@ -234,7 +254,7 @@ for (var i = 0, l = charas.work.length; i < l; i++) {
 		prof.find('.name').text(descriptor.name);
 		prof.find('.description').html(descriptor.desc);
 		if(descriptor.profilePic != 0) {
-			prof.find('.profile').attr('src','../img/banner/'+descriptor.name+'.png');
+			prof.find('.profile').attr('src','img/profile/'+descriptor.name.toLowerCase() +'.png');
 		}
 		else {
 			prof.find('.profImg').remove();

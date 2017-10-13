@@ -23,6 +23,9 @@
 		    background-repeat: no-repeat !important;
 		    background-attachment: fixed !important;
 		  }
+		  #gijinkas {
+		  	background-position:top center !important;
+		  }
 		  .jumbotron:nth-child(even) {
 		  	background:#fff;
 		  }
@@ -31,7 +34,7 @@
 		  	border-radius:0px !important;
 		  }
 		  .jumbotron > .container {
-		  	margin-bottom:25%;
+		  	margin-bottom:20%;
 		  }
 		  .jumbotron ul li {
 		  	list-style-type:none;
@@ -68,11 +71,13 @@
 		    color:var(--accent) !important;
 		    transition:color 200ms;
 		  }
-		  .profile img {
-		  	height:300px;
-		  	object-fit: cover;
-		  	object-position: 50% 0%;
-		  	width:100%;
+		  .profImg {
+		  	max-height:500px;
+		  	overflow:hidden;
+		  }
+		  .profile {
+		  	height:100%;
+		  	width:auto;
 		  }
 		  .gallery img {
 		  	height:150px;
@@ -99,6 +104,12 @@
 		  .chara {
 		  	padding:2.2rem;
 		  }
+		  .container-fluid:not(:last-child) {
+		  	padding:2.2rem 0;
+		  }
+		  .container-fluid:not(:nth-child(2)), .chara:not(:nth-child(2)) {
+		  	padding-top:0rem !important;
+		  }
 		  .info strong {
 		  	color:var(--text);
 		  }
@@ -107,6 +118,8 @@
 		  }
 		  .btn {
 		  	margin:10px;
+		  	background:#c1c1c1;
+		  	color:var(--text);
 		  }
 		  .detail p {
 		  	padding-left: 5px;
