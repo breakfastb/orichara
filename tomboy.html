@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="old/fancybox/jquery.fancybox.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway:700" rel="stylesheet">
+    <title>orichara</title>
+</head>
+
+<body>
+    <div class="contain">
+        <div class="row">
+            <div class="col-lg-3 col-sm-12">
+                <div class="menu-toggle">
+                    <span>☰</span>
+                </div>
+                <nav class="nav flex-column" id="side-menu">
+                    <a class="nav-link" href="index.html">top</a>
+                    <a class="nav-link" href="summer.html">summer days</a>
+                    <a class="nav-link" href="helpless.html">helpless oneechan</a>
+                    <a class="nav-link active" href="tomboy.html">tomboy & megane</a>
+                    <a class="nav-link" href="gijinka.html">gijinkas</a>
+                    <a class="nav-link" href="wip.html">wip</a>
+                </nav>
+            </div>
+            <div class="col-lg-9 col-sm-12" id="characters">
+                <div class="detail">
+                    <h1></h1>
+                    <p class="desc"></p>
+                    <a class="btn text-center" id="btnTemplate" href="#"></a>
+                </div>
+                <br>
+                <div class="row chara" id="template">
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <img src="#" class="profile">
+                            </div>
+                            <div class="col-12 gallery">
+                                <a href="#" data-fancybox="images" id="galleryTemplate">
+          						  <img src="#"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chara-detail col-lg-8 col-sm-12">
+                        <h2 class="name">name</h2>
+                        <ul class="text-left infoList">
+                            <li class="info" id="infoTemplate"></li>
+                        </ul>
+                        <p class="blurb">blurb</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="old/fancybox/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <script>
+        jQuery(document).ready(function($) {
+            $('.fancybox').fancybox({
+                prevEffect: 'none',
+                nextEffect: 'none',
+                closeBtn: true,
+                arrows: true,
+                nextClick: true
+            });
+        });
+    </script>
+</body>
+
+</html>
