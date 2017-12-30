@@ -205,6 +205,7 @@ $(document).ready(function() {
 	// get current pathname
 	var pathname = (window.location.pathname).toString().substr(21);
 	var current_url = pathname.substr(0, pathname.length - 5);
+	console.log(current_url);
 
 	//search works array for pathname
 	function matchTitle(title) {
